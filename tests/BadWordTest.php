@@ -1,5 +1,7 @@
 <?php
 
+use YumaIt\RandomToken\RandomToken;
+
 it('simple safe word test', function () {
     expect(callCheckValue('hello'))->toBeTrue();
 });
@@ -21,7 +23,7 @@ it('hidden bad word test', function () {
  */
 function callCheckValue(string $input)
 {
-    $reflection = new ReflectionClass(\YumaIt\RandomToken\RandomToken::class);
+    $reflection = new ReflectionClass(RandomToken::class);
     $method = $reflection->getMethod('checkValue');
     $method->setAccessible(true);
 
