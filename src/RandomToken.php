@@ -20,7 +20,6 @@ class RandomToken
         $rand = collect([
             'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'J', 'K', 'M', 'N', 'P', 'R', 'T', 'V', 'W', 'X', 'Y', 'Z', '1', '2', '3', '4', '5', '7', '8', '9',
         ])
-            // @phpstan-ignore-next-line
             ->pipe(fn ($c) => Collection::times($length, fn () => $c[random_int(0, 27)]))
             ->implode('');
 

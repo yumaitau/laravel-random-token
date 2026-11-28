@@ -1,11 +1,13 @@
 <?php
 
+use YumaIt\RandomToken\RandomToken;
+
 it('simple generate test', function () {
-    expect(\YumaIt\RandomToken\RandomToken::generate())->toBeString();
+    expect(RandomToken::generate())->toBeString();
 });
 
 it('generate with length test', function () {
-    expect(\YumaIt\RandomToken\RandomToken::generate(10))->toHaveLength(10);
-    expect(\YumaIt\RandomToken\RandomToken::generate(20))->toHaveLength(20);
-    expect(\YumaIt\RandomToken\RandomToken::generate(30))->toHaveLength(30);
+    expect(RandomToken::generate(10))->toHaveLength(10);
+    expect(RandomToken::generate(20))->toHaveLength(20);
+    expect(RandomToken::generate(30))->toHaveLength(30);
 });
